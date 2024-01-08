@@ -11,6 +11,12 @@ export default {
         'green-teal': 'hsl(166, 100%, 37%)',
         'cobalt-blue': 'hsl(234, 85%, 45%)',
 
+        //backgrounds
+        'very-light-red': 'hsl(6, 100%, 98%)',
+        'very-light-orange': 'hsl(42, 100%, 97%)',
+        'very-light-green': 'hsl(173, 53%, 97%)',
+        'very-light-blue': 'hsl(240, 71%, 97%)',
+
         // gradients
         'light-slate-blue-bg': 'hsl(252, 100%, 67%)', // Background
         'light-royal-blue-bg': 'hsl(241, 81%, 54%)', // Background

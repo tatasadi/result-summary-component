@@ -1,36 +1,54 @@
+import { ScoreVariant } from '~/types/ScoreVariant'
+
 function Score({
-  className = '',
   icon,
   score,
-  children,
+  category,
+  variant,
 }: {
-  className?: string
   icon: string
   score: number
-  children?: React.ReactNode
+  category: string
+  variant: ScoreVariant
 }) {
+  let textClass, bgClass
+  switch (variant) {
+    case ScoreVariant.Danger:
+      textClass = 'text-light-red'
+      bgClass = 'bg-very-light-red'
+      break
+
+    case ScoreVariant.Warning:
+      textClass = 'text-orangey-yellow'
+      bgClass = 'bg-very-light-orange'
+      break
+
+    case ScoreVariant.Success:
+      textClass = 'text-green-teal'
+      bgClass = 'bg-very-light-green'
+      break
+
+    case ScoreVariant.Neutral:
+      textClass = 'text-cobalt-blue'
+      bgClass = 'bg-very-light-blue'
+      break
+
+    default:
+      break
+  }
+
   return (
-    <div className={className}>
-      <div>
-        <img src={icon} alt="icon" />
-        {children}
+    <div className={`${bgClass} flex rounded-xl p-4`}>
+      <div className="flex items-center gap-3">
+        <img src={icon} alt="icon" className="h-5 w-5" />
+        <p className={`${textClass} font-medium lg:text-lg`}>{category}</p>
       </div>
-      <div>
-        <p>{score}</p>
-        <p> / 100</p>
+      <div className="ml-auto flex font-bold lg:text-lg">
+        <p className="mr-2">{score}</p>
+        <p className="text-dark-gray-blue opacity-50"> / 100</p>
       </div>
     </div>
   )
-}
-
-Score.Category = function ScoreCategory({
-  children,
-  className = '',
-}: {
-  children: React.ReactNode
-  className?: string
-}) {
-  return <p className={className}>{children}</p>
 }
 
 export default Score
