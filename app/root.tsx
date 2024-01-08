@@ -29,7 +29,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="font-hanken-grotesk -+items-center bg-vary-light-blue flex min-h-screen flex-col justify-center">
+      <body className="-+items-center flex  min-h-screen flex-col justify-center font-hanken-grotesk">
         <Outlet />
         <Footer className="m-4 mt-auto" />
         <ScrollRestoration />
